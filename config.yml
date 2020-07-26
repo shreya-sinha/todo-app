@@ -1,0 +1,28 @@
+logging:
+  level: INFO
+  loggers:
+    todo: DEBUG
+
+mongo:
+  type: uriConfig
+  uri: mongodb://localhost:27017/todo
+
+swagger:
+  resourcePackage: todo.api
+  title: Todo API
+  schemes:
+    - http
+  version: 1.0
+
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  allowedMethods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+  connector:
+    type: http
+    port: 8080
